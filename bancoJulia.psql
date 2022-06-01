@@ -1,0 +1,73 @@
+drop table amigos;
+drop table livros;
+
+create table amigos(
+    idamg int primary key auto_increment,
+    nome varchar(255) not null,
+    sobrenome varchar(255) not null
+);
+
+
+
+create table livros(
+    id int primary key auto_increment,
+    autor varchar(255) not null,
+    titulo varchar(255) not null,
+    editora varchar(255) not null,
+    ano int not null
+    dataemprest date,
+    idamg int not null,
+    foreign key (idamg) references (idamg)
+
+);
+
+
+insert into amigos (nome, sobrenome),
+values (Maria,Eduarda);
+
+insert into amigos (nome, sobrenome),
+values (David,Soares);
+
+insert into amigos (nome, sobrenome),
+values (Guilherme,Leo);
+
+
+insert into livros (autor, titulo, editora, ano, dataemprest)
+values('Miguel de Cervantes', 'Dom Quixote', 'Ática',2019, '2022-05-20');
+
+insert into livros (autor, titulo, editora, ano, dataemprest)
+values('Miguel de Cervantes', 'Dom Quixote', 'Principis',2019, '2022-04-30');
+
+insert into livros (autor, titulo, editora, ano, dataemprest)
+values('Miguel de Cervantes', 'Dom Quixote', 'L&PM',2017, '2022-05-31');
+
+insert into livros (autor, titulo, editora, ano, dataemprest)
+values('Miguel de Cervantes', 'Dom Quixote', 'Pé da letra',2018, '2022-05-28');
+
+insert into livros (autor, titulo, editora, ano, dataemprest)
+values('Machado de Assis', 'Dom Casmurro', 'Principis',2019, '2022-05-15');
+
+insert into livros (autor, titulo, editora, ano, dataemprest)
+values('Machado de Assis', 'Dom Casmurro', 'Penguin-Companhia',2016, '2022-05-10');
+
+insert into livros (autor, titulo, editora, ano, dataemprest)
+values('Machado de Assis', 'Dom Casmurro', 'Ática',2019, '2022-05-25');
+
+insert into livros (autor, titulo, editora, ano, dataemprest)
+values('Machado de Assis', 'Dom Casmurro', 'Antofágica',2022, '2022-05-09');
+
+select 
+livros.titulo, livros.editora, livros.ano,
+amigos.nome as Nome, amigos.sobrenome as sobrenome
+from livros inner join colegas
+on livros.amigos = amigos.livros;
+
+
+
+
+
+
+
+
+
+
